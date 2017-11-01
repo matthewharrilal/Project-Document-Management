@@ -18,14 +18,24 @@ class DisplayCollections: UITableViewController {
         }
     }
     
+    var collectionName: String?
+    var imageURL: String?
+    
     let networkInstance = AccessJSONCollections()
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        networkInstance.networking { (data) in
+            let collection = try? JSONDecoder().decode([ImageFile].self, from: data)
+            self.collectionNames = collection!
+        }
+        self.tableView.reloadData()
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        networkInstance.networking { (data) in
-                let collection = try? JSONDecoder().decode([ImageFile].self, from: data)
-            self.collectionNames = collection!
-        }
+        //Essentially since we put the code in the viewdidload we can download the images and have them show on the table view cells
+        //So what we have to do is essentially store resource then move it to the temporary folder
     }
     
     override func didReceiveMemoryWarning() {
@@ -43,4 +53,6 @@ class DisplayCollections: UITableViewController {
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return collectionNames.count
     }
+    
+   
 }

@@ -25,8 +25,8 @@ extension ImageFile: Decodable {
     }
     init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: Keys.self)
-        let collectionName = try container.decodeIfPresent(String.self, forKey: .collectionName)
-        let zippedImagesUrl = try container.decodeIfPresent(String.self, forKey: .zippedImagesUrl)
+        var collectionName = try container.decodeIfPresent(String.self, forKey: .collectionName)
+        var zippedImagesUrl = try container.decodeIfPresent(String.self, forKey: .zippedImagesUrl)
         self.init(collectionName: collectionName, zippedImagesUrl: zippedImagesUrl)
     }
 }

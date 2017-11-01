@@ -15,6 +15,7 @@
 		1CB6E2D91FA81E8A00C04EC1 /* AccessingJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CB6E2D81FA81E8A00C04EC1 /* AccessingJSON.swift */; };
 		1CB6E2DC1FA8444B00C04EC1 /* ImageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CB6E2DB1FA8444B00C04EC1 /* ImageModel.swift */; };
 		1CB6E2DE1FA9843100C04EC1 /* DisplayCollections.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CB6E2DD1FA9843100C04EC1 /* DisplayCollections.swift */; };
+		1CB6E2E01FA99D7C00C04EC1 /* DownloadingImages.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CB6E2DF1FA99D7C00C04EC1 /* DownloadingImages.swift */; };
 		E91E458C98523C12F715E09F /* Pods_Project_Document_Management.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5C4125885363C86A6E451F04 /* Pods_Project_Document_Management.framework */; };
 /* End PBXBuildFile section */
 
@@ -29,6 +30,7 @@
 		1CB6E2D81FA81E8A00C04EC1 /* AccessingJSON.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessingJSON.swift; sourceTree = "<group>"; };
 		1CB6E2DB1FA8444B00C04EC1 /* ImageModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageModel.swift; sourceTree = "<group>"; };
 		1CB6E2DD1FA9843100C04EC1 /* DisplayCollections.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisplayCollections.swift; sourceTree = "<group>"; };
+		1CB6E2DF1FA99D7C00C04EC1 /* DownloadingImages.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DownloadingImages.swift; sourceTree = "<group>"; };
 		5C4125885363C86A6E451F04 /* Pods_Project_Document_Management.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Project_Document_Management.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DE731380EA152E9EA834EC04 /* Pods-Project-Document-Management.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Project-Document-Management.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Project-Document-Management/Pods-Project-Document-Management.debug.xcconfig"; sourceTree = "<group>"; };
 		E801EDD4E3403BD14ED54B3D /* Pods-Project-Document-Management.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Project-Document-Management.release.xcconfig"; path = "Pods/Target Support Files/Pods-Project-Document-Management/Pods-Project-Document-Management.release.xcconfig"; sourceTree = "<group>"; };
@@ -85,6 +87,7 @@
 				1C019A811FA7D21100BB0493 /* Assets.xcassets */,
 				1C019A831FA7D21100BB0493 /* LaunchScreen.storyboard */,
 				1C019A861FA7D21100BB0493 /* Info.plist */,
+				1CB6E2DF1FA99D7C00C04EC1 /* DownloadingImages.swift */,
 			);
 			path = "Project-Document-Management";
 			sourceTree = "<group>";
@@ -228,6 +231,7 @@
 			files = (
 				1C019A7D1FA7D21100BB0493 /* ViewController.swift in Sources */,
 				1C019A7B1FA7D21100BB0493 /* AppDelegate.swift in Sources */,
+				1CB6E2E01FA99D7C00C04EC1 /* DownloadingImages.swift in Sources */,
 				1CB6E2D91FA81E8A00C04EC1 /* AccessingJSON.swift in Sources */,
 				1CB6E2DC1FA8444B00C04EC1 /* ImageModel.swift in Sources */,
 				1CB6E2DE1FA9843100C04EC1 /* DisplayCollections.swift in Sources */,
