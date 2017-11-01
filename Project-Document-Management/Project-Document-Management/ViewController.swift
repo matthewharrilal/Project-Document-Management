@@ -43,7 +43,9 @@ class ViewController: UIViewController {
                 let filePath = Bundle.main.url(forResource: "forest", withExtension: "zip")!
                 let temporaryDirectory = FileManager.default.temporaryDirectory
                 do {
-                    let unzipDirectory = try? Zip.quickUnzipFile(filePath)
+                    let unzipDirectory = try? Zip.unzipFile(filePath, destination: temporaryDirectory, overwrite: true, password: "password", progress: { (progress) in
+                        print(progress)
+                    })
                     print(unzipDirectory)
                 }
                 catch {
