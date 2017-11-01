@@ -4,7 +4,7 @@
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13174"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -23,6 +23,14 @@
                                 <state key="normal" title="Download"/>
                                 <connections>
                                     <action selector="downloadButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Vhr-ng-2cp"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qe4-Is-7WW">
+                                <rect key="frame" x="139" y="376" width="96" height="53"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Unzip"/>
+                                <connections>
+                                    <action selector="unzipButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="01r-Br-xNd"/>
                                 </connections>
                             </button>
                         </subviews>

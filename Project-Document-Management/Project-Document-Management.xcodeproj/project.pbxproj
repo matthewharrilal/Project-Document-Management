@@ -12,6 +12,9 @@
 		1C019A801FA7D21100BB0493 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1C019A7E1FA7D21100BB0493 /* Main.storyboard */; };
 		1C019A821FA7D21100BB0493 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1C019A811FA7D21100BB0493 /* Assets.xcassets */; };
 		1C019A851FA7D21100BB0493 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1C019A831FA7D21100BB0493 /* LaunchScreen.storyboard */; };
+		1C18D0B91FAA52950042DF47 /* Zip.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1C18D0BA1FAA52950042DF47 /* Zip.framework */; };
+		1C2938D61FAA5429008BFAFA /* forest.zip in Resources */ = {isa = PBXBuildFile; fileRef = 1C2938D51FAA5428008BFAFA /* forest.zip */; };
+		1C2938D81FAA545A008BFAFA /* UnzipFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C2938D71FAA545A008BFAFA /* UnzipFile.swift */; };
 		1CB6E2D91FA81E8A00C04EC1 /* AccessingJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CB6E2D81FA81E8A00C04EC1 /* AccessingJSON.swift */; };
 		1CB6E2DC1FA8444B00C04EC1 /* ImageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CB6E2DB1FA8444B00C04EC1 /* ImageModel.swift */; };
 		1CB6E2DE1FA9843100C04EC1 /* DisplayCollections.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CB6E2DD1FA9843100C04EC1 /* DisplayCollections.swift */; };
@@ -27,6 +30,9 @@
 		1C019A811FA7D21100BB0493 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1C019A841FA7D21100BB0493 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1C019A861FA7D21100BB0493 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1C18D0BA1FAA52950042DF47 /* Zip.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Zip.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		1C2938D51FAA5428008BFAFA /* forest.zip */ = {isa = PBXFileReference; lastKnownFileType = archive.zip; path = forest.zip; sourceTree = "<group>"; };
+		1C2938D71FAA545A008BFAFA /* UnzipFile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnzipFile.swift; sourceTree = "<group>"; };
 		1CB6E2D81FA81E8A00C04EC1 /* AccessingJSON.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessingJSON.swift; sourceTree = "<group>"; };
 		1CB6E2DB1FA8444B00C04EC1 /* ImageModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageModel.swift; sourceTree = "<group>"; };
 		1CB6E2DD1FA9843100C04EC1 /* DisplayCollections.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisplayCollections.swift; sourceTree = "<group>"; };
@@ -41,6 +47,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1C18D0B91FAA52950042DF47 /* Zip.framework in Frameworks */,
 				E91E458C98523C12F715E09F /* Pods_Project_Document_Management.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -60,6 +67,7 @@
 		1C019A6E1FA7D21100BB0493 = {
 			isa = PBXGroup;
 			children = (
+				1C2938D51FAA5428008BFAFA /* forest.zip */,
 				1C019A791FA7D21100BB0493 /* Project-Document-Management */,
 				1C019A781FA7D21100BB0493 /* Products */,
 				0527E819F6086ED79ADE7FA2 /* Pods */,
@@ -82,6 +90,7 @@
 				1C019A7C1FA7D21100BB0493 /* ViewController.swift */,
 				1CB6E2DD1FA9843100C04EC1 /* DisplayCollections.swift */,
 				1CB6E2DB1FA8444B00C04EC1 /* ImageModel.swift */,
+				1C2938D71FAA545A008BFAFA /* UnzipFile.swift */,
 				1CB6E2D81FA81E8A00C04EC1 /* AccessingJSON.swift */,
 				1C019A7E1FA7D21100BB0493 /* Main.storyboard */,
 				1C019A811FA7D21100BB0493 /* Assets.xcassets */,
@@ -95,6 +104,7 @@
 		D979E66F2B5531B1DA8BE232 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				1C18D0BA1FAA52950042DF47 /* Zip.framework */,
 				5C4125885363C86A6E451F04 /* Pods_Project_Document_Management.framework */,
 			);
 			name = Frameworks;
@@ -162,6 +172,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1C2938D61FAA5429008BFAFA /* forest.zip in Resources */,
 				1C019A851FA7D21100BB0493 /* LaunchScreen.storyboard in Resources */,
 				1C019A821FA7D21100BB0493 /* Assets.xcassets in Resources */,
 				1C019A801FA7D21100BB0493 /* Main.storyboard in Resources */,
@@ -229,6 +240,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1C2938D81FAA545A008BFAFA /* UnzipFile.swift in Sources */,
 				1C019A7D1FA7D21100BB0493 /* ViewController.swift in Sources */,
 				1C019A7B1FA7D21100BB0493 /* AppDelegate.swift in Sources */,
 				1CB6E2E01FA99D7C00C04EC1 /* DownloadingImages.swift in Sources */,

@@ -27,10 +27,17 @@ class ViewController: UIViewController {
 //        if let tempDirectory = urls {
 //            let tempURL = tempDirectory.appendingPathComponent(<#T##pathComponent: String##String#>)
 //        }
-        writeToTemporary()
         
     }
     
+    @IBAction func unzipButton(_ sender: Any) {
+        let filePath = Bundle.main.url(forResource: "forest", withExtension: "zip")!
+        print(filePath)
+        do {
+            let unzipDirectory = try? Zip.quickUnzipFile(filePath)
+            print(unzipDirectory)
+        }
+    }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -47,18 +54,7 @@ class ViewController: UIViewController {
         }
     }
     
-    func writeToTemporary() {
-        let url = URL(string: "https://www.mediafire.com/file/aands9xm93r35zk/forest.zip")
-        let session = URLSession.shared.dataTask(with: url!) { (data, response, error) in
-            var documentsDirectory: String?
-            var paths = NSSearchPathForDirectoriesInDomains(.itemReplacementDirectory, .allDomainsMask, true)
-            if paths.count > 0 {
-                documentsDirectory = paths[0]
-                FileManager.default.createFile(atPath: documentsDirectory!, contents: data, attributes: nil)
-                print("The download was succesful")
-            }
-        }
-    }
+   
     
 }
 
