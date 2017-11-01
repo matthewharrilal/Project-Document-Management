@@ -31,12 +31,27 @@ class ViewController: UIViewController {
     }
     
     @IBAction func unzipButton(_ sender: Any) {
-        let filePath = Bundle.main.url(forResource: "forest", withExtension: "zip")!
-        print(filePath)
-        do {
-            let unzipDirectory = try? Zip.quickUnzipFile(filePath)
-            print(unzipDirectory)
+//        let filePath = Bundle.main.url(forResource: "forest", withExtension: "zip")!
+//        print(filePath)
+//        do {
+//            let unzipDirectory = try? Zip.quickUnzipFile(filePath)
+//            print(unzipDirectory)
+//        }
+        let instance = CollectionDownloadNetworkingLayer()
+        DispatchQueue.main.async {
+            instance.getCollections(route: .route(), requestRoute: .get) { (url) in
+                let filePath = Bundle.main.url(forResource: "forest", withExtension: "zip")!
+                let temporaryDirectory = FileManager.default.temporaryDirectory
+                do {
+                    let unzipDirectory = try? Zip.quickUnzipFile(filePath)
+                    print(unzipDirectory)
+                }
+                catch {
+                    print("could not unzip the document")
+                }
+            }
         }
+
     }
     
     override func didReceiveMemoryWarning() {
