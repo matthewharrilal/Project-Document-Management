@@ -29,7 +29,7 @@ class ViewController: UIViewController {
         print("The download button is getting hit")
         networkInstance.networking { (data) in
             let collection = try? JSONDecoder().decode([ImageFile].self, from: data)
-            self.performSegue(withIdentifier: <#T##String#>, sender: <#T##Any?#>)
+            self.performSegue(withIdentifier: "toCollections", sender: nil)
         }
     }
     
