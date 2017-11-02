@@ -28,9 +28,22 @@
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qe4-Is-7WW">
                                 <rect key="frame" x="139" y="376" width="96" height="53"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Unzip"/>
+                                <state key="normal" title="Forest"/>
                                 <connections>
                                     <action selector="unzipButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="01r-Br-xNd"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3fX-we-3lj">
+                                <rect key="frame" x="152" y="526" width="71" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Swimming"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tqv-wt-btk">
+                                <rect key="frame" x="152" y="452" width="71" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Lion"/>
+                                <connections>
+                                    <action selector="lionButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="rM3-qY-ZPv"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -38,6 +51,7 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
+                        <outlet property="swimmingButton" destination="3fX-we-3lj" id="ZmB-6J-qot"/>
                         <segue destination="Dsn-Io-LX8" kind="show" identifier="toCollections" id="FvO-hJ-uHv"/>
                     </connections>
                 </viewController>

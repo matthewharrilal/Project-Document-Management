@@ -13,7 +13,6 @@
 		1C019A821FA7D21100BB0493 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1C019A811FA7D21100BB0493 /* Assets.xcassets */; };
 		1C019A851FA7D21100BB0493 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1C019A831FA7D21100BB0493 /* LaunchScreen.storyboard */; };
 		1C18D0B91FAA52950042DF47 /* Zip.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1C18D0BA1FAA52950042DF47 /* Zip.framework */; };
-		1C2938D61FAA5429008BFAFA /* forest.zip in Resources */ = {isa = PBXBuildFile; fileRef = 1C2938D51FAA5428008BFAFA /* forest.zip */; };
 		1C2938D81FAA545A008BFAFA /* UnzipFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C2938D71FAA545A008BFAFA /* UnzipFile.swift */; };
 		1C2938DA1FAA56A1008BFAFA /* DownloadingZipFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C2938D91FAA56A1008BFAFA /* DownloadingZipFile.swift */; };
 		1CB6E2D91FA81E8A00C04EC1 /* AccessingJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CB6E2D81FA81E8A00C04EC1 /* AccessingJSON.swift */; };
@@ -175,7 +174,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1C2938D61FAA5429008BFAFA /* forest.zip in Resources */,
 				1C019A851FA7D21100BB0493 /* LaunchScreen.storyboard in Resources */,
 				1C019A821FA7D21100BB0493 /* Assets.xcassets in Resources */,
 				1C019A801FA7D21100BB0493 /* Main.storyboard in Resources */,

@@ -15,12 +15,18 @@ struct Endpoint {
 }
 
 enum CollectionRoutes {
-    case route()
+    case forest()
+    case lion()
+    case swimming()
     
     func path() -> String {
         switch self {
-        case .route:
+        case .forest():
             return "/aands9xm93r35zk/forest.zip"
+        case .lion():
+            return "/8l0nldlhd97xcqa/lion.zip"
+        case .swimming():
+            return "/aisziyxj55859ob/swimming.zip"
         }
     }
 }
@@ -41,8 +47,8 @@ class CollectionDownloadNetworkingLayer {
         
         session.downloadTask(with: getRequest) { (url, response, error) in
             if let url = url {
-                print(response)
-                print(error?.localizedDescription)
+//                print(response)
+//                print(url)
                  completionHandler(url)
             }
            
