@@ -30,7 +30,6 @@ class DisplayCollections: UITableViewController {
             let collection = try? JSONDecoder().decode([ImageFile].self, from: data)
             self.collectionNames = collection!
         }
-        self.tableView.reloadData()
     }
     
     override func viewDidLoad() {
@@ -46,15 +45,16 @@ class DisplayCollections: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
         let collection = collectionNames[indexPath.row]
         cell.textLabel?.text = collection.collectionName
-        cell.detailTextLabel?.text = collection.zippedImagesUrl
+        cell.detailTextLabel?.text = collection.identifierPath
         
-        var caches = (NSSearchPathForDirectoriesInDomains(FileManager.SearchPathDirectory.cachesDirectory, FileManager.SearchPathDomainMask.userDomainMask, true)[0])
+        let caches = NSSearchPathForDirectoriesInDomains(.cachesDirectory, .userDomainMask, true)[0]
         
-        let cacheURL = URL(string: caches)
-        caches.append(contentsOf: "/forest")
+        let cacheURL = URL(fileURLWithPath: caches)
         
         
-        let contentsOfDirectory = try? FileManager.default.contentsOfDirectory(at: (cacheURL?.appendingPathComponent("forest"))!, includingPropertiesForKeys: nil, options: []).filter{ $0.pathExtension == "png"}[0]
+        
+        let contentsOfDirectory = try? FileManager.default.contentsOfDirectory(at: (cacheURL.appendingPathComponent("lion")), includingPropertiesForKeys: nil, options: []).filter{ $0.pathExtension == "png"}[0]
+        print(contentsOfDirectory)
         let imageData = try? Data(contentsOf: contentsOfDirectory!)
         
         

@@ -10,12 +10,15 @@ import Foundation
 import UIKit
 
 struct ImageFile {
-    var collectionName: String?
-    var zippedImagesUrl: String?
+    var collectionName: String
+    var zippedImagesUrl: URL
     var images = [String]()
-    init(collectionName: String?, zippedImagesUrl: String?) {
+    var identifierPath: String
+    
+    init(collectionName: String, zippedImagesUrl: URL, identifierPath: String) {
         self.collectionName = collectionName
         self.zippedImagesUrl = zippedImagesUrl
+        self.identifierPath = identifierPath
     }
 }
 
@@ -26,8 +29,11 @@ extension ImageFile: Decodable {
     }
     init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: Keys.self)
-        var collectionName = try container.decodeIfPresent(String.self, forKey: .collectionName)
-        var zippedImagesUrl = try container.decodeIfPresent(String.self, forKey: .zippedImagesUrl)
-        self.init(collectionName: collectionName, zippedImagesUrl: zippedImagesUrl)
+        let collectionName = try container.decode(String.self, forKey: .collectionName)
+        let zippedImagesUrl = try container.decode(URL.self, forKey: .zippedImagesUrl)
+        
+        let identifierPath = zippedImagesUrl.lastPathComponent
+        self.init(collectionName: collectionName, zippedImagesUrl: zippedImagesUrl, identifierPath: identifierPath)
+        
     }
 }

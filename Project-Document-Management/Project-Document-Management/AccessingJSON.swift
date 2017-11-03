@@ -14,7 +14,7 @@ import UIKit
 class AccessJSONCollections {
     let session = URLSession.shared
     func networking(completionHandler: @escaping (Data) -> Void) {
-        var getRequest = URLRequest(url: URL(string: "https://api.myjson.com/bins/17i2zn")!)
+        var getRequest = URLRequest(url: URL(string: "https://api.myjson.com/bins/17ge17")!)
         getRequest.httpMethod = "GET"
         session.dataTask(with: getRequest) { (data, response, error) in
             if let data = data {
