@@ -49,7 +49,8 @@ public enum ZipCompression: Int {
 }
 
 /// Zip class
-public class Zip {
+public class
+Zip {
     
     /**
      Set of vaild file extensions

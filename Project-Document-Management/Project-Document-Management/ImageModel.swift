@@ -12,6 +12,7 @@ import UIKit
 struct ImageFile {
     var collectionName: String?
     var zippedImagesUrl: String?
+    var images = [String]()
     init(collectionName: String?, zippedImagesUrl: String?) {
         self.collectionName = collectionName
         self.zippedImagesUrl = zippedImagesUrl

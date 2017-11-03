@@ -8,6 +8,7 @@
 
 import Foundation
 import UIKit
+import Zip
 
 class DisplayCollections: UITableViewController {
     var collectionNames: [ImageFile] = [] {
@@ -34,19 +35,37 @@ class DisplayCollections: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        //Essentially since we put the code in the viewdidload we can download the images and have them show on the table view cells
-        //So what we have to do is essentially store resource then move it to the temporary folder
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
     
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
         let collection = collectionNames[indexPath.row]
         cell.textLabel?.text = collection.collectionName
         cell.detailTextLabel?.text = collection.zippedImagesUrl
+        
+        var caches = (NSSearchPathForDirectoriesInDomains(FileManager.SearchPathDirectory.cachesDirectory, FileManager.SearchPathDomainMask.userDomainMask, true)[0])
+        
+        let cacheURL = URL(string: caches)
+        caches.append(contentsOf: "/forest")
+        
+        
+        let contentsOfDirectory = try? FileManager.default.contentsOfDirectory(at: (cacheURL?.appendingPathComponent("forest"))!, includingPropertiesForKeys: nil, options: []).filter{ $0.pathExtension == "png"}[0]
+        let imageData = try? Data(contentsOf: contentsOfDirectory!)
+        
+        
+        DispatchQueue.main.async {
+            
+            cell.imageView?.image = UIImage(data: imageData!)
+            self.tableView.reloadData()
+            
+        }
+        
+        
         return cell
     }
     
@@ -54,5 +73,5 @@ class DisplayCollections: UITableViewController {
         return collectionNames.count
     }
     
-   
+    
 }

@@ -8,6 +8,7 @@
 
 import Foundation
 import UIKit
+import Zip
 
 
 struct Endpoint {
@@ -22,11 +23,11 @@ enum CollectionRoutes {
     func path() -> String {
         switch self {
         case .forest():
-            return "/aands9xm93r35zk/forest.zip"
+            return "/forest.zip"
         case .lion():
-            return "/8l0nldlhd97xcqa/lion.zip"
+            return "/lion.zip"
         case .swimming():
-            return "/aisziyxj55859ob/swimming.zip"
+            return "/swimming.zip"
         }
     }
 }
@@ -38,7 +39,7 @@ enum DifferentHttpsMethods: String {
 }
 
 class CollectionDownloadNetworkingLayer {
-    var baseURL = "https://www.mediafire.com/file"
+    var baseURL = "https://s3-us-west-2.amazonaws.com/mob3"
     let session = URLSession.shared
     func getCollections(route: CollectionRoutes, requestRoute: DifferentHttpsMethods, completionHandler: @escaping (URL?) -> Void) {
         var fullUrlString = URL(string: baseURL.appending(route.path()))
@@ -48,7 +49,7 @@ class CollectionDownloadNetworkingLayer {
         session.downloadTask(with: getRequest) { (url, response, error) in
             if let url = url {
 //                print(response)
-//                print(url)
+               
                  completionHandler(url)
             }
            
