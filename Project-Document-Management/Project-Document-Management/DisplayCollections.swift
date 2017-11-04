@@ -51,9 +51,9 @@ class DisplayCollections: UITableViewController {
         
         let cacheURL = URL(fileURLWithPath: caches)
         
+        let newPath = collection.identifierPath.replacingOccurrences(of: ".zip", with: "")
         
-        
-        let contentsOfDirectory = try? FileManager.default.contentsOfDirectory(at: (cacheURL.appendingPathComponent("lion")), includingPropertiesForKeys: nil, options: []).filter{ $0.pathExtension == "png"}[0]
+        let contentsOfDirectory = try? FileManager.default.contentsOfDirectory(at: (cacheURL.appendingPathComponent(newPath)), includingPropertiesForKeys: nil, options: []).filter{ $0.pathExtension == "png"}[0]
         print(contentsOfDirectory)
         let imageData = try? Data(contentsOf: contentsOfDirectory!)
         
