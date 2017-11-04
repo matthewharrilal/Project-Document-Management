@@ -34,6 +34,7 @@ class DisplayCollections: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.tableView.reloadData()
     }
     
     override func didReceiveMemoryWarning() {
@@ -59,10 +60,8 @@ class DisplayCollections: UITableViewController {
         
         
         DispatchQueue.main.async {
-            
             cell.imageView?.image = UIImage(data: imageData!)
             self.tableView.reloadData()
-            
         }
         
         

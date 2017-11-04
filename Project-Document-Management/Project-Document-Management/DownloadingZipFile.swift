@@ -50,7 +50,9 @@ class CollectionDownloadNetworkingLayer {
             if let url = url {
 //                print(response)
                
-                 completionHandler(url)
+                DispatchQueue.main.async {
+                      completionHandler(url)
+                }
             }
            
         }.resume()
