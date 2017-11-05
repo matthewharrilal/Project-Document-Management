@@ -20,12 +20,16 @@ class DisplayImages: UICollectionViewController {
     }
    
     
-    var identifierPaths = ""
+    var identifierPathz: String?
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        print(identifierPathz)
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        print(identifierPaths)
+    
     }
     
     override func didReceiveMemoryWarning() {
@@ -39,12 +43,13 @@ class DisplayImages: UICollectionViewController {
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! CollectionViewCell
         
-        let newPath = identifierPaths.replacingOccurrences(of: ".zip", with: "")
+        let newPath = identifierPathz?.replacingOccurrences(of: ".zip", with: "")
+        
         print(newPath)
         
         let caches = NSSearchPathForDirectoriesInDomains(.cachesDirectory, .userDomainMask, true)[0]
         var cacheURL = URL(fileURLWithPath: caches)
-        let contentsOfDirectory = try? FileManager.default.contentsOfDirectory(at: cacheURL.appendingPathComponent("swimming"), includingPropertiesForKeys: nil, options: []).filter{ $0.pathExtension == "jpeg"}[1]
+        let contentsOfDirectory = try? FileManager.default.contentsOfDirectory(at: cacheURL.appendingPathComponent(newPath!), includingPropertiesForKeys: nil, options: []).filter{ $0.pathExtension == "jpeg"}[1]
         
         let imageData = try? Data(contentsOf: contentsOfDirectory!)
         

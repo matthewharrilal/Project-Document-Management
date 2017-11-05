@@ -75,19 +75,20 @@ class DisplayCollections: UITableViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let storyboard = UIStoryboard.init(name: "Main", bundle: nil)
         let imagesCVC = storyboard.instantiateViewController(withIdentifier: "Images") as! DisplayImages
-        let images1 = collectionNames[indexPath.row]
-        imagesCVC.identifierPaths = images1.identifierPath
-        imagesCVC.collectionView?.reloadData()
+        var images1 = collectionNames[indexPath.row]
+        imagesCVC.identifierPathz = images1.identifierPath
+        print(images1.identifierPath)
         
         navigationController?.pushViewController(imagesCVC, animated: true)
     }
     
-//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//        if segue.identifier == "toImages" {
-//            let collectionCVC = segue.destination as? DisplayImages
-//
-//
-//        }
-//    }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "toImages" {
+            let collectionCVC = segue.destination as? DisplayImages
+           let cell = self.tableView.cellForRow(at: tableView.indexPathForSelectedRow!)
+            collectionCVC?.identifierPathz = cell?.detailTextLabel?.text
+
+        }
+    }
     
 }
