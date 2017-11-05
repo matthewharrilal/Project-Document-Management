@@ -93,6 +93,9 @@
                                         </label>
                                     </subviews>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="Rmz-SH-lkA" kind="show" identifier="toImages" id="LZR-kf-IIH"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -104,6 +107,49 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uEQ-P0-IeR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1020" y="134"/>
+        </scene>
+        <!--Images-->
+        <scene sceneID="WDw-Y9-yiu">
+            <objects>
+                <collectionViewController storyboardIdentifier="Images" title="Images" id="Rmz-SH-lkA" customClass="DisplayImages" customModule="Project_Document_Management" customModuleProvider="target" sceneMemberID="viewController">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="FbI-yA-oaP">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="mbn-RY-him">
+                            <size key="itemSize" width="147" height="87"/>
+                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                        </collectionViewFlowLayout>
+                        <cells>
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="cell" id="alv-Xc-hjm" customClass="CollectionViewCell" customModule="Project_Document_Management" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="147" height="87"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                                    <rect key="frame" x="0.0" y="0.0" width="147" height="87"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="TU1-Hu-llm">
+                                            <rect key="frame" x="0.0" y="0.0" width="147" height="87"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        </imageView>
+                                    </subviews>
+                                </view>
+                                <connections>
+                                    <outlet property="zippedImageView" destination="TU1-Hu-llm" id="LiY-mh-xgC"/>
+                                </connections>
+                            </collectionViewCell>
+                        </cells>
+                        <connections>
+                            <outlet property="dataSource" destination="Rmz-SH-lkA" id="6Qj-Ws-RJU"/>
+                            <outlet property="delegate" destination="Rmz-SH-lkA" id="59S-tn-EUk"/>
+                        </connections>
+                    </collectionView>
+                </collectionViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="JW9-MS-6Eh" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1732" y="180.35982008995504"/>
         </scene>
     </scenes>
 </document>

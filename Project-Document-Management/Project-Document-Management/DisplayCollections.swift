@@ -72,5 +72,22 @@ class DisplayCollections: UITableViewController {
         return collectionNames.count
     }
     
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let storyboard = UIStoryboard.init(name: "Main", bundle: nil)
+        let imagesCVC = storyboard.instantiateViewController(withIdentifier: "Images") as! DisplayImages
+        let images1 = collectionNames[indexPath.row]
+        imagesCVC.identifierPaths = images1.identifierPath
+        imagesCVC.collectionView?.reloadData()
+        
+        navigationController?.pushViewController(imagesCVC, animated: true)
+    }
+    
+//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+//        if segue.identifier == "toImages" {
+//            let collectionCVC = segue.destination as? DisplayImages
+//
+//
+//        }
+//    }
     
 }
