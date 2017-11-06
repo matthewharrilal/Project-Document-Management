@@ -36,9 +36,32 @@ class DisplayImages: UICollectionViewController {
         super.didReceiveMemoryWarning()
     }
     
-    override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-       return 3
+    func getCount() -> Int {
+        let newPath = identifierPathz?.replacingOccurrences(of: ".zip", with: "")
+        
+        print(newPath)
+        
+        let caches = NSSearchPathForDirectoriesInDomains(.cachesDirectory, .userDomainMask, true)[0]
+        var cacheURL = URL(fileURLWithPath: caches)
+        let contentsOfDirectory = try? FileManager.default.contentsOfDirectory(at: cacheURL.appendingPathComponent(newPath!), includingPropertiesForKeys: nil, options: []).filter{ $0.pathExtension == "jpeg"}
+        return (contentsOfDirectory?.count)!
     }
+    
+    func getImages() -> [URL] {
+        let newPath = identifierPathz?.replacingOccurrences(of: ".zip", with: "")
+        
+        print(newPath)
+        
+        let caches = NSSearchPathForDirectoriesInDomains(.cachesDirectory, .userDomainMask, true)[0]
+        var cacheURL = URL(fileURLWithPath: caches)
+        let contentsOfDirectory = try? FileManager.default.contentsOfDirectory(at: cacheURL.appendingPathComponent(newPath!), includingPropertiesForKeys: nil, options: []).filter{ $0.pathExtension == "jpeg"}
+        return contentsOfDirectory!
+    }
+    
+    override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+       return getCount()
+    }
+    
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! CollectionViewCell
@@ -53,7 +76,7 @@ class DisplayImages: UICollectionViewController {
         DispatchQueue.main.async {
             print(contentsOfDirectory)
             
-            let imageURL = contentsOfDirectory![indexPath.row]
+            let imageURL = self.getImages()[indexPath.row]
             print(imageURL)
             
             
