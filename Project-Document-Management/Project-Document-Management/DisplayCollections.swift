@@ -80,6 +80,7 @@ class DisplayCollections: UITableViewController {
         print(images1.identifierPath)
         
         navigationController?.pushViewController(imagesCVC, animated: true)
+        
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
