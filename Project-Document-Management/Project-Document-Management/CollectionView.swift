@@ -43,7 +43,7 @@ class DisplayImages: UICollectionViewController {
         
         let caches = NSSearchPathForDirectoriesInDomains(.cachesDirectory, .userDomainMask, true)[0]
         var cacheURL = URL(fileURLWithPath: caches)
-        let contentsOfDirectory = try? FileManager.default.contentsOfDirectory(at: cacheURL.appendingPathComponent(newPath!), includingPropertiesForKeys: nil, options: []).filter{ $0.pathExtension == "jpeg"}
+        let contentsOfDirectory = try? FileManager.default.contentsOfDirectory(at: cacheURL.appendingPathComponent(newPath!), includingPropertiesForKeys: nil, options: []).filter{ $0.pathExtension == "jpeg" || $0.pathExtension == "jpg"}
         return (contentsOfDirectory?.count)!
     }
     
@@ -54,7 +54,7 @@ class DisplayImages: UICollectionViewController {
         
         let caches = NSSearchPathForDirectoriesInDomains(.cachesDirectory, .userDomainMask, true)[0]
         var cacheURL = URL(fileURLWithPath: caches)
-        let contentsOfDirectory = try? FileManager.default.contentsOfDirectory(at: cacheURL.appendingPathComponent(newPath!), includingPropertiesForKeys: nil, options: []).filter{ $0.pathExtension == "jpeg"}
+        let contentsOfDirectory = try? FileManager.default.contentsOfDirectory(at: cacheURL.appendingPathComponent(newPath!), includingPropertiesForKeys: nil, options: []).filter{ $0.pathExtension == "jpeg" || $0.pathExtension == "jpg"}
         return contentsOfDirectory!
     }
     
@@ -72,7 +72,7 @@ class DisplayImages: UICollectionViewController {
         
         let caches = NSSearchPathForDirectoriesInDomains(.cachesDirectory, .userDomainMask, true)[0]
         var cacheURL = URL(fileURLWithPath: caches)
-        let contentsOfDirectory = try? FileManager.default.contentsOfDirectory(at: cacheURL.appendingPathComponent(newPath!), includingPropertiesForKeys: nil, options: []).filter{ $0.pathExtension == "jpeg"}
+        let contentsOfDirectory = try? FileManager.default.contentsOfDirectory(at: cacheURL.appendingPathComponent(newPath!), includingPropertiesForKeys: nil, options: []).filter{ $0.pathExtension == "jpeg" || $0.pathExtension == "jpg"}
         DispatchQueue.main.async {
             print(contentsOfDirectory)
             
