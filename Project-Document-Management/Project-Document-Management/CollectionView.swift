@@ -49,15 +49,23 @@ class DisplayImages: UICollectionViewController {
         
         let caches = NSSearchPathForDirectoriesInDomains(.cachesDirectory, .userDomainMask, true)[0]
         var cacheURL = URL(fileURLWithPath: caches)
-        let contentsOfDirectory = try? FileManager.default.contentsOfDirectory(at: cacheURL.appendingPathComponent(newPath!), includingPropertiesForKeys: nil, options: []).filter{ $0.pathExtension == "jpeg"}[1]
-        
-        let imageData = try? Data(contentsOf: contentsOfDirectory!)
-        
+        let contentsOfDirectory = try? FileManager.default.contentsOfDirectory(at: cacheURL.appendingPathComponent(newPath!), includingPropertiesForKeys: nil, options: []).filter{ $0.pathExtension == "jpeg"}
         DispatchQueue.main.async {
+            print(contentsOfDirectory)
+            
+            let imageURL = contentsOfDirectory![indexPath.row]
+            print(imageURL)
+            
+            
+                let imageData = try? Data(contentsOf: imageURL)
+            
+//
             cell.zippedImageView.image = UIImage(data: imageData!)
-            self.collectionView?.reloadData()
+                self.collectionView?.reloadData()
+                
+            
         }
-        
+      
         
         
         
